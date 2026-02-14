@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 59 130 246;
+    --color-secondary: 31 41 55;
+    --color-background: 243 244 246;
+    --color-text: 17 24 39;
+    --color-success: 16 185 129;
+    --color-error: 239 68 68;
+  }
+}
+
+@layer components {
+  .wallet-button {
+    @apply h-12 px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           bg-indigo-600 hover:bg-indigo-700 text-white text-base w-full
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  .network-button {
+    @apply px-4 py-2 rounded-md text-sm font-medium transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  .status-indicator {
+    @apply w-2 h-2 rounded-full;
+  }
+}
+
+/* Override wallet adapter styles */
+.wallet-adapter-button {
+  @apply wallet-button !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  @apply rounded-xl !important;
+}
+
+/* Override Sui wallet kit styles */
+.sui-connect-button {
+  @apply wallet-button !important;
+}
+
+.sui-connect-modal {
+  @apply rounded-xl !important;
+}
